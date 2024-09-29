@@ -35,8 +35,8 @@ pipeline {
                         sh 'echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin docker.io'
                     }
                     
-                    sh 'docker push ${IMAGE}:${BUILD_NUMBER}'
                     sh 'docker push ${IMAGE}:latest'
+                    sh 'docker push ${IMAGE}:${BUILD_NUMBER}'
                 }
             }
         }
