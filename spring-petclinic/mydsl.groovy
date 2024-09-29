@@ -3,7 +3,6 @@ pipeline {
     
     environment {
         IMAGE = 'shlomilory/petclinic_proj'
-        GIT_CREDENTIALS_ID = 'GItc'
         DOCKER_CREDENTIALS_ID = 'valhala'
         DOCKERFILE_PATH = "spring-petclinic/Dockerfile"
         
@@ -17,6 +16,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    sh 'pwd'
                     sh 'docker build --no-cache -f ${DOCKERFILE_PATH} -t ${IMAGE}:${BUILD_NUMBER} .'
                 }
             }
