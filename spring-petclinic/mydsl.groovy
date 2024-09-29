@@ -43,10 +43,10 @@ pipeline {
     }
     post {
         success {
-            echo 'Docker image build and push successful!'
+            echo 'Docker image was succeded'
         }
         failure {
-            echo 'Docker image build or push failed.'
+            echo 'failure!.'
         }
     }
 }
