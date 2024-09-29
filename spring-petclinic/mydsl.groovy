@@ -17,7 +17,6 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'pwd'
                     sh 'docker build --no-cache -f ${DOCKERFILE_PATH} -t ${IMAGE}:${BUILD_NUMBER} ${CONTEXT}'
                 }
             }
@@ -33,7 +32,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                        sh 'echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin'
+                        sh 'echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin docker.io'
                     }
                     
                     sh 'docker push ${IMAGE}:${BUILD_NUMBER}'
