@@ -9,7 +9,7 @@ RUN sonar-scanner -Dsonar.projectBaseDir=/usr/src && echo "Build timestamp: $(da
 FROM maven:3.8.7-openjdk-18-slim AS builder
 WORKDIR /my_app
 COPY . /my_app/
-#RUN chmod +x ./mvnw
+RUN chmod +x ./mvnw
 RUN ./mvnw package
 
 ###Create the final image##
