@@ -6,7 +6,6 @@ pipeline {
         GIT_CREDENTIALS_ID = 'GItc'
         DOCKER_CREDENTIALS_ID = 'valhala'
         DOCKERFILE_PATH = "spring-petclinic/Dockerfile"
-        CONTEXT = "/home/jenkins/workspace/Final/spring-petclinic"
         
     }
     stages {
@@ -18,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build --no-cache -f ${DOCKERFILE_PATH} -t ${IMAGE}:${BUILD_NUMBER} ${CONTEXT}'
+                    sh 'docker build --no-cache -f ${DOCKERFILE_PATH} -t test .'
                 }
             }
         }
