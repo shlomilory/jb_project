@@ -5,7 +5,7 @@ pipeline {
         IMAGE = 'shlomilory/petclinic_proj'
         DOCKER_CREDENTIALS_ID = 'valhala'
         DOCKERFILE_PATH = "spring-petclinic/Dockerfile"
-        CONTEXT = "/home/jenkins/workspace/Final/welcome/app/bookinfo/src/productpage"
+        CONTEXT = "/home/jenkins/workspace/Final/spring-petclinic"
         
     }
     stages {
