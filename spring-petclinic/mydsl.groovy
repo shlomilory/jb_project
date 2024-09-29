@@ -5,6 +5,7 @@ pipeline {
         IMAGE = 'shlomilory/petclinic_proj'
         DOCKER_CREDENTIALS_ID = 'valhala'
         DOCKERFILE_PATH = "spring-petclinic/Dockerfile"
+        CONTEXT = "/home/jenkins/workspace/Final/welcome/app/bookinfo/src/productpage"
         
     }
     stages {
@@ -17,7 +18,7 @@ pipeline {
             steps {
                 script {
                     sh 'pwd'
-                    sh 'docker build --no-cache -t ${IMAGE}:${BUILD_NUMBER} .'
+                    sh 'docker build --no-cache -f ${DOCKERFILE_PATH} -t ${IMAGE}:${BUILD_NUMBER} ${CONTEXT}'
                 }
             }
         }
