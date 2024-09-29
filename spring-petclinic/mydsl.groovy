@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     sh 'pwd'
-                    sh 'docker build --no-cache -f ${DOCKERFILE_PATH} -t ${IMAGE}:${BUILD_NUMBER} .'
+                    sh 'docker build --no-cache -t ${IMAGE}:${BUILD_NUMBER} .'
                 }
             }
         }
