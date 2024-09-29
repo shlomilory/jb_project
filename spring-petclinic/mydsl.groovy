@@ -11,8 +11,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/shlomilory/jb_project.git',
-                git credentialsId: "${GIT_CREDENTIALS_ID}"
+                git branch: 'main', url: 'https://github.com/shlomilory/jb_project.git', git credentialsId: "${GIT_CREDENTIALS_ID}"
             }
         }
         stage('Build Docker Image') {
