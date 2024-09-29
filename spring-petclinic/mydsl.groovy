@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main'
+                git branch: 'main', 
                 git credentialsId: "${GIT_CREDENTIALS_ID}", url: 'https://github.com/shlomilory/jb_project.git'
             }
         }
