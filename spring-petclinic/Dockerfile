@@ -1,4 +1,4 @@
-##Run SonarQube to check the code##
+##Run SonarQube to check the codee##
 FROM sonarsource/sonar-scanner-cli:latest AS sonarqube
 WORKDIR /usr/src
 COPY . /usr/src
