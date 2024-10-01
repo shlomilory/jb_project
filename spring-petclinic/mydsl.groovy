@@ -34,7 +34,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh 'echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin docker.io'
                     }
-                    sh 'docker tag ${IMAGE}:${BUILD_NUMBER}'
+                    sh 'docker push ${IMAGE}:${BUILD_NUMBER}'
                     sh 'docker push ${IMAGE}:latest'
                 }
             }
