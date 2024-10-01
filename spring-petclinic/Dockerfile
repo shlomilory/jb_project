@@ -3,7 +3,7 @@ FROM sonarsource/sonar-scanner-cli AS sonarqube
 WORKDIR /usr/src
 COPY . /usr/src
 COPY ./sonar-runner.properties /opt/sonar-scanner/conf/sonar-scanner.properties
-RUN sonar-scanner -Dsonar.projectBaseDir=/usr/src && echo "Build timestamp: $(date)"
+RUN sonar-scanner -Dsonar.projectBaseDir=/usr/src 
 
 #Build The Artifact Package##
 #FROM maven:3.8.7-openjdk-18-slim AS builder
