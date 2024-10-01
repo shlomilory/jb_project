@@ -1,5 +1,5 @@
 ##Run SonarQube to check the code##
-FROM sonarsource/sonar-scanner-cli:11.0 AS sonarqube
+FROM sonarsource/sonar-scanner-cli AS sonarqube
 WORKDIR /usr/src
 COPY . /usr/src
 COPY ./sonar-runner.properties /opt/sonar-scanner/conf/sonar-scanner.properties
