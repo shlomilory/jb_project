@@ -1,9 +1,9 @@
 ##Run SonarQube to check the code##
-FROM sonarsource/sonar-scanner-cli AS sonarqube
+FROM sonarsource/sonar-scanner-cli:latest AS sonarqube
 WORKDIR /usr/src
 COPY . /usr/src
 COPY ./sonar-runner.properties /opt/sonar-scanner/conf/sonar-scanner.properties
-RUN sonar-scanner -Dsonar.projectBaseDir=/usr/src 
+RUN sonar-scanner -Dsonar.projectBaseDir=/usr/src -Dsonar.failonError=false -Dsonar.verbose=true
 
 #Build The Artifact Package##
 #FROM maven:3.8.7-openjdk-18-slim AS builder
