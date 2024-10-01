@@ -36,7 +36,6 @@ pipeline {
                     }
                     
                     sh 'docker push ${IMAGE}:latest'
-                    sh 'docker push ${IMAGE}:${BUILD_NUMBER}'
                 }
             }
         }
