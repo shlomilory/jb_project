@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        IMAGE = 'shlomilory/petclinic_proj'
+        IMAGE = 'kubeshlomi/petclinic_proj'
         DOCKER_CREDENTIALS_ID = 'valhala'
         DOCKERFILE_PATH = "spring-petclinic/Dockerfile"
         CONTEXT = "/home/jenkins/workspace/Final/spring-petclinic"
@@ -34,7 +34,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh 'echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin docker.io'
                     }
-                    
+                    sh 'docker tag ${IMAGE}:${BUILD_NUMBER}'
                     sh 'docker push ${IMAGE}:latest'
                 }
             }
