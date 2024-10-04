@@ -42,7 +42,7 @@ pipeline {
     }
     post {
         success {
-            echo 'Docker image was succeded'
+            echo 'Docker image was Pushed'
         }
         failure {
             echo 'failure!.'
