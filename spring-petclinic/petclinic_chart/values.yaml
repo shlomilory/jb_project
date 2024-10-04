@@ -1,0 +1,27 @@
+Deployment:
+  Imagename: kubeshlomi/petclinic_proj:latest
+  label:
+  labelselector:
+  DepN:
+Service:
+  type:
+  label:
+  labelselector:
+  port:
+  targetport:
+Mysqldep:
+  Imagename: mysql:5.7 
+  label:
+  labelselector:
+  DepN:
+configenv:
+  MYSQL_ROOT_PASSWORD:
+  MYSQL_ALLOW_EMPTY_PASSWORD:
+  MYSQL_USER:
+  MYSQL_PASSWORD:
+  MYSQL_DATABASE:
+
+
+
+
+
