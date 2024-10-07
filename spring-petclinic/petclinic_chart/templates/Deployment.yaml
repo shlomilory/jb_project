@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: petclinic-container
-        image: {{ .Values.Deployment.Imagename }}
+        image: {{ .Values.Deployment.Imagename }}:latest
         resources:
           limits:
             memory: "556Mi"
