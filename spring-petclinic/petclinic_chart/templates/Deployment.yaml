@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app:  {{ .Values.Deployment.label }}
+        app: {{ .Values.Deployment.label }}
     spec:
       containers:
       - name: petclinic-container
