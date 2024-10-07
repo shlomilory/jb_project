@@ -1,14 +1,13 @@
 Deployment:
-  Imagename: kubeshlomi/petclinic_proj:latest
-  label:
-  labelselector:
-  DepN:
+  Imagename: kubeshlomi/petclinic_proj
+  label: petclinic
+  labelselector: petclinic
 Service:
-  type:
-  label:
-  labelselector:
-  port:
-  targetport:
+  type: ClusterIP
+  label: petclinic
+  labelselector: petclinic
+  port: 80
+  targetport: 8080
 Mysqldep:
   Imagename: mysql:5.7 
   label:
