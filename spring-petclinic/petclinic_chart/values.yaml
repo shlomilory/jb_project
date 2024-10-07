@@ -10,15 +10,13 @@ Service:
   targetport: 8080
 Mysqldep:
   Imagename: mysql:5.7 
-  label:
-  labelselector:
-  DepN:
-configenv:
+  label: petclinic
+  labelselector: petclinic
   MYSQL_ROOT_PASSWORD:
-  MYSQL_ALLOW_EMPTY_PASSWORD:
-  MYSQL_USER:
-  MYSQL_PASSWORD:
-  MYSQL_DATABASE:
+  MYSQL_ALLOW_EMPTY_PASSWORD: true
+  MYSQL_USER: petclinic
+  MYSQL_PASSWORD: petclinic
+  MYSQL_DATABASE: petclinic
 
 
 
