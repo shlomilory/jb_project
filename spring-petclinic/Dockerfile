@@ -13,7 +13,7 @@ RUN chmod +x ./mvnw
 RUN ./mvnw package
 
 ###Create the final image##
-FROM rgrubba/alpine-java-18 
+FROM openjdk:18-alpine
 WORKDIR /code
 COPY --from=builder /my_app/target/*.jar /code/
 CMD ["sh", "-c", "java -jar /code/*.jar"]
