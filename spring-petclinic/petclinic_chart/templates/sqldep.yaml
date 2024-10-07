@@ -23,7 +23,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: {{ .Values.Mysqldep.MYSQL_ROOT_PASSWORD }}
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
-          value: {{ .Values.Mysqldep.MYSQL_ALLOW_EMPTY_PASSWORD }}
+          value: {{ .Values.Mysqldep.MYSQL_ALLOW_EMPTY_PASSWORD | quote }}
         - name: MYSQL_USER
           value: {{ .Values.Mysqldep.MYSQL_USER }}
         - name: MYSQL_PASSWORD
