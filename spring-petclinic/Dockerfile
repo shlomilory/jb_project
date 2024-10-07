@@ -16,4 +16,4 @@ RUN ./mvnw package
 FROM rgrubba/alpine-java-18 
 WORKDIR /code
 COPY --from=builder /my_app/target/*.jar /code/
-CMD ["sh", "-c", "java, -jar, /code/*.jar"]
+CMD ["sh", "-c", "java", "-jar", "/code/*.jar"]
