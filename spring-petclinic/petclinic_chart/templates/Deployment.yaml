@@ -19,4 +19,4 @@ spec:
             memory: "556Mi"
             cpu: "500m"
         ports:
-        - containerPort: {{ .Values.Service.targetPort }}
+        - containerPort: {{ .Values.Service.targetport }}
