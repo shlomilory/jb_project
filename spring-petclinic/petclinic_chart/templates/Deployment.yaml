@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: {{.Release.Name}}
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: {{.Release.Name}}
   template:
     metadata:
       labels:
-        app: myapp
+        app: {{.Release.Name}}
     spec:
       containers:
-      - name: myapp
+      - name: {{.Release.Name}}-container
         image: <Image>
         resources:
           limits:
