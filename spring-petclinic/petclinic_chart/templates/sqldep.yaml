@@ -30,11 +30,3 @@ spec:
           value: {{ .Values.Mysqldep.MYSQL_PASSWORD }}
         - name: MYSQL_DATABASE
           value: {{ .Values.Mysqldep.MYSQL_DATABASE }}
-
-        volumeMounts:
-        - name: mysql-storage
-          mountPath: /var/lib/mysql
-      volumes:
-      - name: mysql-storage
-        persistentVolumeClaim:
-          claimName: mysql-pvc
